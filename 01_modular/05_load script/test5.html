@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    1.一个页面需要引入多个js文件
+    2.问题:
+      1）.请求过多
+      2）.依赖模糊
+      3）.难以维护
+  
+    首先我们要依赖多个模块, 那样就会发送多个请求, 导致请求过多
+
+    然后就是依赖关系模糊, 我们不知道他们的具体依赖关系是什么
+    也就是说很容易因为依赖
+
+    以上的现象就导致了这样会很难维护。
+    很可能出现牵一发而动全身的情况,导致项目出现严重问题。
+    
+    3.这些问题可以通过现代模块化编码和项目构建来解决
+   -->
+   <script type="text/javascript" src="test1.js"></script>
+   <script type="text/javascript" src="test2.js"></script>
+   <script type="text/javascript" src="test3.js"></script>
+   <script type="text/javascript" src="test1.js"></script>
+   <script type="text/javascript" src="test2.js"></script>
+   <script type="text/javascript" src="test3.js"></script>
+   <script type="text/javascript" src="test1.js"></script>
+   <script type="text/javascript" src="test2.js"></script>
+   <script type="text/javascript" src="test3.js"></script>
+</body>
+</html>
