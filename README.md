@@ -115,4 +115,64 @@
     3.实现：sea.js https://www.zhangxinxu.com/sp/seajs/
 
 ### 4. ES6
-  
+1. 说明：依赖模块需要编译打包处理
+2. 语法：
+  * 导出模块：export
+  * 引入模块：import {} from ''
+3. 实现（浏览器端）：Babel
+
+####
+* cli: command line interface 命令行接口
+* babel:
+  1. 安装
+  npm install --save-dev @babel/core @babel/cli @babel/preset-env
+  2. 创建名为 babel.config.json (或 .babelrc )配置文件：(rc => run control)
+
+```
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "edge": "17",
+          "firefox": "60",
+          "chrome": "67",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage",
+        "corejs": "3.6.5"
+      }
+    ]
+  ]
+}
+```
+  3. 使用语法
+```
+  【常规暴露】：
+    统一暴露——————————
+    function a
+    function b
+    export {a,b} (解构赋值简写)
+
+    分别暴露——————————
+    export function c
+    export let arr = xxxx
+
+    引入时：
+    import {a,b} from ''
+    import [c,arr] from ''
+
+    【默认暴露】：
+    export default {
+      a:'',
+      foo(){
+        console.log(b)
+      }
+    }
+    引入时：
+    import XXX from '' （XXX可以自己起个名字）
+
+    【引入第三方库】：
+    import $ from 'jquery'
+```
